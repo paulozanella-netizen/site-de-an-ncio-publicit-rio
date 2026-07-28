@@ -1,0 +1,196 @@
+import { createFileRoute } from "@tanstack/react-router";
+import heroImage from "../assets/hero-aurora.jpg";
+
+export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Aviso Público: Poluição Ambiental | Projeto Atmos" },
+      {
+        name: "description",
+        content:
+          "Aviso público comunitário sobre a poluição ambiental atual. Dados, causas, consequências e ações para proteger o ar que respiramos.",
+      },
+      { property: "og:title", content: "Aviso Público: Poluição Ambiental | Projeto Atmos" },
+      {
+        property: "og:description",
+        content:
+          "A qualidade do ar nas nossas cidades atingiu um ponto crítico. Conheça os dados, as causas e o que podemos fazer juntos.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Aviso Público: Poluição Ambiental | Projeto Atmos" },
+      {
+        name: "twitter:description",
+        content:
+          "A qualidade do ar nas nossas cidades atingiu um ponto crítico. Conheça os dados, as causas e o que podemos fazer juntos.",
+      },
+      { property: "og:image", content: "https://id-preview--b788d3e8-2f3b-4774-a1f4-4d3dfbe1431f.lovable.app" + heroImage },
+      { name: "twitter:image", content: "https://id-preview--b788d3e8-2f3b-4774-a1f4-4d3dfbe1431f.lovable.app" + heroImage },
+    ],
+  }),
+  component: Index,
+});
+
+function Index() {
+  return (
+    <div className="min-h-screen bg-background text-foreground font-body selection:bg-accent/30 selection:text-accent">
+      <nav className="sticky top-0 z-50 w-full border-b border-border bg-background/60 backdrop-blur-xl px-6 py-4 flex justify-between items-center">
+        <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground flex items-center gap-4">
+          <span className="text-accent">●</span>
+          <span>Ref: EEA-2024-PT</span>
+        </div>
+        <div className="flex gap-6">
+          <a href="#dados" className="font-mono text-[10px] uppercase tracking-widest hover:text-accent transition-colors">
+            Dados
+          </a>
+          <a href="#acao" className="font-mono text-[10px] uppercase tracking-widest hover:text-accent transition-colors">
+            Ação
+          </a>
+        </div>
+      </nav>
+
+      <main className="max-w-[1100px] mx-auto px-6 py-20">
+        <section className="mb-24 animate-fade-up">
+          <div className="mb-8 font-mono text-xs uppercase tracking-[0.3em] text-accent font-bold">
+            Aviso Público Comunitário
+          </div>
+          <h1 className="font-display text-6xl md:text-8xl font-bold tracking-tight leading-[0.9] text-balance mb-10">
+            O AR QUE <br />
+            RESPIRAMOS <br />
+            <span className="text-gradient">não é infinito.</span>
+          </h1>
+          <div className="max-w-2xl">
+            <p className="text-lg md:text-xl leading-relaxed text-pretty text-muted-foreground">
+              A qualidade do ar nas nossas cidades atingiu um ponto crítico. O que antes era invisível agora manifesta-se
+              em dados incontestáveis. Mas entre a névoa, existe um caminho para a clareza.
+            </p>
+          </div>
+        </section>
+
+        <section id="dados" className="mb-24 animate-fade-up animation-delay-200">
+          <div className="relative overflow-hidden rounded-2xl glass glow-primary">
+            <img
+              src={heroImage}
+              alt="Cidade futurista com aurora boreal de tons verde e roxo num céu limpo"
+              width={1920}
+              height={1088}
+              className="w-full aspect-[21/9] object-cover opacity-90"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
+          </div>
+          <div className="flex justify-between items-start pt-4 mt-4">
+            <span className="font-mono text-[10px] uppercase text-muted-foreground">Fig. A: Transição de Partículas</span>
+            <span className="max-w-xs text-sm text-muted-foreground">
+              A redução de 15% na densidade de carbono permite a recuperação imediata dos ecossistemas locais.
+            </span>
+          </div>
+        </section>
+
+        <section className="grid md:grid-cols-3 gap-6 mb-24">
+          <div className="glass glow-accent rounded-2xl p-8 animate-fade-up animation-delay-300">
+            <div className="font-mono text-5xl mb-4 text-gradient">92%</div>
+            <h3 className="font-display font-bold text-sm uppercase tracking-wider mb-3">Exposição Global</h3>
+            <p className="text-sm leading-relaxed text-muted-foreground">
+              Da população urbana mundial respira ar que excede os limites de segurança estabelecidos pela OMS.
+            </p>
+          </div>
+          <div className="glass glow-primary rounded-2xl p-8 animate-fade-up animation-delay-400">
+            <div className="font-mono text-5xl mb-4 text-gradient">7M</div>
+            <h3 className="font-display font-bold text-sm uppercase tracking-wider mb-3">Impacto Humano</h3>
+            <p className="text-sm leading-relaxed text-muted-foreground">
+              Mortes prematuras anuais são atribuídas diretamente à poluição atmosférica externa e doméstica.
+            </p>
+          </div>
+          <div className="glass glow-accent rounded-2xl p-8 animate-fade-up animation-delay-500">
+            <div className="font-mono text-5xl mb-4 text-gradient">2030</div>
+            <h3 className="font-display font-bold text-sm uppercase tracking-wider mb-3">Meta de Viragem</h3>
+            <p className="text-sm leading-relaxed text-muted-foreground">
+              O ano limite para implementar políticas de emissão zero antes de danos irreversíveis à camada de ozono.
+            </p>
+          </div>
+        </section>
+
+        <section className="max-w-3xl mb-24">
+          <h2 className="font-display text-4xl font-bold tracking-tight mb-10">
+            As Causas e <span className="text-gradient">Consequências</span>
+          </h2>
+          <div className="space-y-8">
+            <div className="glass rounded-2xl p-6 md:p-8 grid md:grid-cols-4 gap-6 items-start">
+              <div className="font-mono text-[10px] uppercase tracking-widest text-accent pt-1">01. Indústria</div>
+              <div className="md:col-span-3">
+                <p className="text-base leading-relaxed">
+                  A queima de combustíveis fósseis para produção de energia e manufatura liberta toneladas de dióxido
+                  de enxofre e óxidos de azoto, criando o manto denso que sufoca as bacias urbanas.
+                </p>
+              </div>
+            </div>
+            <div className="glass rounded-2xl p-6 md:p-8 grid md:grid-cols-4 gap-6 items-start">
+              <div className="font-mono text-[10px] uppercase tracking-widest text-accent pt-1">02. Mobilidade</div>
+              <div className="md:col-span-3">
+                <p className="text-base leading-relaxed">
+                  O transporte rodoviário continua a ser o maior poluidor individual em centros metropolitanos. A
+                  transição para mobilidade suave e elétrica não é apenas ecológica, é de saúde pública.
+                </p>
+              </div>
+            </div>
+            <div className="glass rounded-2xl p-6 md:p-8 grid md:grid-cols-4 gap-6 items-start">
+              <div className="font-mono text-[10px] uppercase tracking-widest text-accent pt-1">03. Saúde</div>
+              <div className="md:col-span-3">
+                <p className="text-base leading-relaxed">
+                  A exposição crónica a partículas finas aumenta as doenças respiratórias, cardiovasculares e o risco de
+                  cancro pulmonar, afetando particularmente crianças e idosos.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="acao" className="glass glow-primary rounded-3xl p-10 md:p-20 animate-fade-up">
+          <div className="max-w-xl mx-auto text-center">
+            <h2 className="font-display text-4xl md:text-5xl font-bold tracking-tight mb-6">
+              Compromisso pela <span className="text-gradient">Clareza</span>
+            </h2>
+            <p className="font-body text-lg text-muted-foreground mb-12">
+              Assine o manifesto cívico para exigir zonas de emissões reduzidas e monitorização transparente na sua
+              cidade.
+            </p>
+            <form className="flex flex-col md:flex-row gap-4">
+              <input
+                type="email"
+                placeholder="Endereço de e-mail"
+                className="flex-1 bg-transparent border border-border rounded-xl px-5 py-4 font-mono text-sm focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-colors"
+              />
+              <button
+                type="button"
+                className="bg-gradient-to-r from-accent to-primary text-accent-foreground px-10 py-4 rounded-xl font-display font-bold text-sm uppercase tracking-widest hover:brightness-110 transition-all cursor-pointer glow-accent"
+              >
+                Aderir à Mudança
+              </button>
+            </form>
+            <p className="mt-8 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
+              Relatório oficial atualizado a cada 24 horas.
+            </p>
+          </div>
+        </section>
+      </main>
+
+      <footer className="border-t border-border mt-32 py-12 px-6 bg-background/40 backdrop-blur-xl">
+        <div className="max-w-[1100px] mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+          <div className="font-display font-bold text-xl tracking-tight text-gradient">PROJETO ATMOS</div>
+          <div className="flex gap-8 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
+            <a href="#" className="hover:text-foreground transition-colors">
+              Privacidade
+            </a>
+            <a href="#" className="hover:text-foreground transition-colors">
+              Metodologia
+            </a>
+            <a href="#" className="hover:text-foreground transition-colors">
+              Contacto
+            </a>
+          </div>
+          <div className="text-[10px] font-mono text-muted-foreground uppercase">© 2024 Consciente Digital</div>
+        </div>
+      </footer>
+    </div>
+  );
+}
